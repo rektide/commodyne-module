@@ -19,4 +19,25 @@
 			<version>0.1.2-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.voodoowarez.mojo.git10</groupId>
+				<artifactId>git10-maven-plugin</artifactId>
+				<version>1.0-SNAPSHOT</version>
+				<executions>
+					<execution>
+						<phase>initialize</phase>
+						<goals>
+							<goal>git10</goal>
+						</goals>
+						<configuration>
+							<repository>git://github.com/substack/node-resolve</repository>
+							<branchOrTag>0.5.1</branchOrTag>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
