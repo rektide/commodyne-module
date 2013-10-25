@@ -19,9 +19,26 @@
 			<version>0.1.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
+			<groupId>com.voodoowarez.commodyne</groupId>
+			<artifactId>commodyne-runtime</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.voodoowarez.commodyne</groupId>
+			<artifactId>commodyne-vfs</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>javax.el</groupId>
 			<artifactId>javax.el-api</artifactId>
 			<version>3.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.8.7</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 	<build>
