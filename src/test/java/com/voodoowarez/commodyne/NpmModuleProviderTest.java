@@ -14,7 +14,7 @@ public class NpmModuleProviderTest {
 
 	@BeforeSuite
 	public void createRuntime() {
-		this.runtime = new Runner(CommodyneNpm.COMMODYNE_NPM, null, null).makeRuntime();
+		this.runtime = new Runner(CommodyneNpm.INITIALIZERS, null, null).makeRuntime();
 	}
 
 	@Test

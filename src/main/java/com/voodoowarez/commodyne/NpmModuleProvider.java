@@ -7,7 +7,10 @@ import org.dynjs.runtime.ExecutionContext;
 import org.dynjs.runtime.GlobalObject;
 import org.dynjs.runtime.builtins.Require;
 import org.dynjs.runtime.modules.ModuleProvider;
+import org.dynjs.runtime.wrapper.JavascriptFunction;
+import org.vertx.java.core.Vertx;
 
+import com.voodoowarez.commodyne.init.dynjs.JVertx;
 import com.voodoowarez.commodyne.modules.CommonsVfsModuleProvider;
 
 public class NpmModuleProvider extends ModuleProvider {
@@ -21,7 +24,9 @@ public class NpmModuleProvider extends ModuleProvider {
 		//this.underlying = underlying;
 
 		final Config config = new Config();
+		final Vertx vertx = (Vertx) globalObject.get("__jvertx");
 		this.dynJs = new DynJS(config);
+		Runner.initialize(this.dynJs, new RuntimeInitializer[]{ new JVertx(vertx) });
 		final Require internalRequire = (Require) dynJs.getExecutionContext().getGlobalObject().get("require");
 		try {
 			final ModuleProvider internal = new CommonsVfsModuleProvider();
@@ -29,7 +34,7 @@ public class NpmModuleProvider extends ModuleProvider {
 		} catch (FileSystemException ex) {
 			throw new RuntimeException(ex);
 		}
-		Object req = internalRequire.call(this.dynJs.getExecutionContext(), null, "sync");
+		final JavascriptFunction req = (JavascriptFunction) internalRequire.call(this.dynJs.getExecutionContext(), null, "sync");
 
 		this.require = (Require) globalObject.get("require");
 		this.require.addModuleProvider(this);
