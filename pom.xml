@@ -33,6 +33,11 @@
 			<artifactId>javax.el-api</artifactId>
 			<version>3.0.0</version>
 		</dependency>
+		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>lang-js</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -42,6 +47,17 @@
 		</dependency>
 	</dependencies>
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>src/main/js</directory>
+			</resource>
+			<resource>
+				<directory>target/generated-git10/node-resolve/lib</directory>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>com.voodoowarez.mojo.git10</groupId>
@@ -65,8 +81,8 @@
 				 <artifactId>maven-compiler-plugin</artifactId>
 				 <version>3.1</version>
 				 <configuration>
-					  <source>1.5</source>
-					  <target>1.5</target>
+					<source>1.5</source>
+					<target>1.5</target>
 				 </configuration>
 			</plugin>
 		</plugins>

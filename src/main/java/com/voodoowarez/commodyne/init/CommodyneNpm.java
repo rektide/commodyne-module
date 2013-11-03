@@ -15,7 +15,7 @@ public class CommodyneNpm implements RuntimeInitializer {
 	public void prepConfig(Config config) {
 	}
 
-	public void initialize(DynJS dynjs, Config config) {
+	public void initialize(DynJS dynjs) {
 		new NpmModuleProvider(dynjs.getExecutionContext().getGlobalObject());
 	}
 

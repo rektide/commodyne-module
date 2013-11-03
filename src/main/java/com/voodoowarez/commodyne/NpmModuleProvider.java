@@ -29,7 +29,7 @@ public class NpmModuleProvider extends ModuleProvider {
 		} catch (FileSystemException ex) {
 			throw new RuntimeException(ex);
 		}
-		Object req = internalRequire.call(this.dynJs.getExecutionContext(), null, "node-resolve/lib/sync");
+		Object req = internalRequire.call(this.dynJs.getExecutionContext(), null, "sync");
 
 		this.require = (Require) globalObject.get("require");
 		this.require.addModuleProvider(this);
