@@ -16,7 +16,7 @@
 		<dependency>
 			<groupId>org.dynjs</groupId>
 			<artifactId>dynjs</artifactId>
-			<version>0.1.2-SNAPSHOT</version>
+			<version>0.2.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.voodoowarez.commodyne</groupId>
