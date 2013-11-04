@@ -27,6 +27,7 @@ public class NpmModuleProvider extends ModuleProvider {
 		final Vertx vertx = (Vertx) globalObject.get("__jvertx");
 		this.dynJs = new DynJS(config);
 		Runner.initialize(this.dynJs, new RuntimeInitializer[]{ new JVertx(vertx) });
+		Runner.initialize(this.dynJs, com.voodoowarez.commodyne.init.Nodyn.NODYN);
 		final Require internalRequire = (Require) dynJs.getExecutionContext().getGlobalObject().get("require");
 		try {
 			final ModuleProvider internal = new CommonsVfsModuleProvider();
