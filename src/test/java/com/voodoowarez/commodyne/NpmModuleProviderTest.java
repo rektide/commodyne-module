@@ -22,4 +22,16 @@ public class NpmModuleProviderTest {
 		Object result = this.runtime.evaluate("2+2");
 		Assert.assertEquals(result, 4l);
 	}
+
+	@Test
+	public void test1() {
+		Object result = this.runtime.evaluate("require('./lib/test-1.js')");
+		Assert.assertEquals(result, "hello from commodyne");
+	}
+
+	@Test
+	public void test2() {
+		Object result = this.runtime.evaluate("require('./lib/test-2.js')");
+		Assert.assertEquals(result, "hello from commodyne");
+	}
 }

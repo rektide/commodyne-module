@@ -57,6 +57,12 @@
 			<resource>
 				<directory>target/generated-git10/node-resolve/lib</directory>
 			</resource>
+			<testResource>
+				<directory>src/main/java</directory>
+			</testResource>
+			<testResource>
+				<directory>src/main/js</directory>
+			</testResource>
 		</resources>
 		<plugins>
 			<plugin>
